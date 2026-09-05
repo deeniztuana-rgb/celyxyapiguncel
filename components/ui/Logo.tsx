@@ -2,6 +2,13 @@ import { Link } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 
+/**
+ * Logo bileşeni.
+ * Logo dosyasını `public/logo.png` olarak ekleyin (şeffaf arka plan, siyah çizim).
+ * Koyu zeminlerde (footer, mobil menü, hero üzerindeki şeffaf navbar) otomatik
+ * olarak beyaza çevrilir (brightness-0 invert). Dilerseniz daha net sonuç için
+ * ayrı bir beyaz sürüm de kullanabilirsiniz — aşağıdaki nota bakın.
+ */
 export function Logo({
   className,
   light = false,
@@ -13,36 +20,14 @@ export function Logo({
     <Link
       href="/"
       aria-label={`${siteConfig.name} home`}
-      className={cn('group inline-flex items-center gap-2.5', className)}
+      className={cn('inline-flex items-center', className)}
     >
-      <span
-        className={cn(
-          'flex h-9 w-9 items-center justify-center border text-sm font-semibold tracking-tight transition-colors',
-          light
-            ? 'border-white/30 text-white'
-            : 'border-ink/20 text-ink group-hover:border-ink'
-        )}
-      >
-        C
-      </span>
-      <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            'font-display text-lg font-semibold tracking-tight',
-            light ? 'text-white' : 'text-ink'
-          )}
-        >
-          {siteConfig.name}
-        </span>
-        <span
-          className={cn(
-            'text-[10px] uppercase tracking-[0.28em]',
-            light ? 'text-white/50' : 'text-text-muted'
-          )}
-        >
-          Building Systems
-        </span>
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/logo.png"
+        alt={siteConfig.legalName}
+        className={cn('h-11 w-auto md:h-12', light && 'brightness-0 invert')}
+      />
     </Link>
   );
 }
