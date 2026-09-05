@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowDown } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { images } from '@/data/images';
-import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -51,9 +50,6 @@ export function Hero() {
             <span className="h-px w-8 bg-white/50" />
             {t('eyebrow')}
           </p>
-          <div className="hidden lg:block">
-            <LocaleSwitcher light />
-          </div>
         </motion.div>
 
         <motion.h1
