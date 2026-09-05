@@ -26,7 +26,7 @@ export function Logo({
       <img
         src="/logo.png"
         alt={siteConfig.legalName}
-        className={cn('h-11 w-auto md:h-12', light && 'brightness-0 invert')}
+        className={cn('h-14 w-auto md:h-16', light && 'brightness-0 invert')}
       />
     </Link>
   );
